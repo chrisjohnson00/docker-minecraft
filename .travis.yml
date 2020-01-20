@@ -6,4 +6,7 @@ arch:
   - arm64
 services:
   - docker
-script: docker build -t minecraft -f Dockerfile .
+script: 
+  - docker build -t cloud.canister.io:5000/chrisjohnson00/minecraft -f Dockerfile .
+  - docker login cloud.canister.io:5000 --username=chrisjohnson00 --password=$CANISTER_PWD
+  - docker push cloud.canister.io:5000/chrisjohnson00/minecraft
