@@ -1,0 +1,6 @@
+arch:
+  - amd64
+  - arm64
+services:
+  - docker
+script: docker build -t minecraft -f Dockerfile .
